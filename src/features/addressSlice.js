@@ -8,19 +8,19 @@ const initialState = {
 }
 
 export const getAddress = createAsyncThunk('getAddress', async() => {
-    const response = await axios.get('http://localhost:3000/address/getAddress')
+    const response = await axios.get('https://mj-one-backend.vercel.app/address/getAddress')
     return response.data
 })
 export const deleteAddress = createAsyncThunk('deleteAddress', async({addressId}) => {
-    const response = await axios.delete(`http://localhost:3000/address/deleteAddress/${addressId}`)
+    const response = await axios.delete(`https://mj-one-backend.vercel.app/address/deleteAddress/${addressId}`)
     return response.data
 })
 export const addAddress = createAsyncThunk('addAddress', async({street,building,landmark,state,city,pincode}) => {
-    const response = await axios.post('http://localhost:3000/address/addAddress', {street,building,landmark,state,city,pincode})
+    const response = await axios.post('https://mj-one-backend.vercel.app/address/addAddress', {street,building,landmark,state,city,pincode})
     return response.data
 })
 export const updateAddress = createAsyncThunk('updateAddress', async({street,building,landmark,state,city,pincode,productId}) => {
-    const response = await axios.put('http://localhost:3000/address/updateAddress', {street,building,landmark,state,city,pincode,productId})
+    const response = await axios.put('https://mj-one-backend.vercel.app/address/updateAddress', {street,building,landmark,state,city,pincode,productId})
     return response.data
 })
 const addressSlice = createSlice({

@@ -9,28 +9,28 @@ const initialState = {
 }
 
 export const addToCart = createAsyncThunk('AddToCart', async({product,quantity}) => {
-    const response = await axios.post('http://localhost:3000/cart/addToCart', {product,quantity})
+    const response = await axios.post('https://mj-one-backend.vercel.app/cart/addToCart', {product,quantity})
     console.log(response.data)
     return response.data
 })
 export const getCart = createAsyncThunk('getCart', async() => {
-    const response = await axios.get('http://localhost:3000/cart/getCart')
+    const response = await axios.get('https://mj-one-backend.vercel.app/cart/getCart')
     return response.data
 })
 export const deleteItemFromCart = createAsyncThunk('deleteItem', async({id}) => {
-    const response = await axios.delete(`http://localhost:3000/cart/delete/${id}`)
+    const response = await axios.delete(`https://mj-one-backend.vercel.app/cart/delete/${id}`)
     return response.data
 })
 export const increaseQuantity = createAsyncThunk('incQuantity', async({productId}) => {
-    const response = await axios.put('http://localhost:3000/cart/increaseQuantity', {productId})
+    const response = await axios.put('https://mj-one-backend.vercel.app/cart/increaseQuantity', {productId})
     return response.data
 })
 export const decreaseQuantity = createAsyncThunk('decreaseQuantity', async({productId}) => {
-    const response = await axios.put('http://localhost:3000/cart/decreaseQuantity', {productId})
+    const response = await axios.put('https://mj-one-backend.vercel.app/cart/decreaseQuantity', {productId})
     return response.data
 })
 export const moveToWishlist = createAsyncThunk('moveToWishlist', async({productIdofProduct,productIdofCartItem}, {dispatch}) => {
-    const response = await axios.post('http://localhost:3000/cart/moveToWishlist', {productIdofProduct, productIdofCartItem})
+    const response = await axios.post('https://mj-one-backend.vercel.app/cart/moveToWishlist', {productIdofProduct, productIdofCartItem})
     console.log(response.data)
     dispatch(moveToWishlistAction({product: response.data.product}))
     return response.data

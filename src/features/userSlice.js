@@ -6,7 +6,7 @@ const initialState = {
     error: null
 }
 export const getUser = createAsyncThunk('getUser', async() => {
-    const response = await axios.get('http://localhost:3000/user/getUser')
+    const response = await axios.get('https://mj-one-backend.vercel.app/user/getUser')
     return response.data
 })
 const userSlice = createSlice({

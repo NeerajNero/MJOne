@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const getProducts = createAsyncThunk('getProducts', async() => {
-    const response = await axios.get('http://localhost:3000/product/products')
+    const response = await axios.get('https://mj-one-backend.vercel.app/product/products')
     return response.data
 })
 

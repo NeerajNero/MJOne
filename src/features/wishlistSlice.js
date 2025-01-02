@@ -7,21 +7,21 @@ const initialState = {
     error: null
 }
 export const addToWishlist = createAsyncThunk('addToWishlist', async({productId}) => {
-    const response = await axios.post('http://localhost:3000/wishlist/addToWishlist', {productId})
+    const response = await axios.post('https://mj-one-backend.vercel.app/wishlist/addToWishlist', {productId})
     console.log(response.data)
     return response.data
 })
 export const getWishlist = createAsyncThunk('getwishlist', async() => {
-    const response = await axios.get('http://localhost:3000/wishlist/wishlist')
+    const response = await axios.get('https://mj-one-backend.vercel.app/wishlist/wishlist')
     console.log(response.data)
     return response.data
 })
 export const removeFromWishlist = createAsyncThunk('removeFromWishlist', async({productId}) => {
-    const response = await axios.delete(`http://localhost:3000/wishlist/deleteFromWishlist/${productId}`)
+    const response = await axios.delete(`https://mj-one-backend.vercel.app/wishlist/deleteFromWishlist/${productId}`)
     return response.data
 })
 export const moveToCart = createAsyncThunk('moveToCart', async({productIdofProduct, productIdofWishlistItem}, {dispatch}) => {
-    const response = await axios.post('http://localhost:3000/wishlist/moveToCart', {productIdofProduct,productIdofWishlistItem})
+    const response = await axios.post('https://mj-one-backend.vercel.app/wishlist/moveToCart', {productIdofProduct,productIdofWishlistItem})
     console.log(response.data)
     dispatch(moveToCartAction({ product: response.data.product }));
     return response.data
