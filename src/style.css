@@ -1,0 +1,19 @@
+h5{
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
+h6 {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
+h5:hover,h6:hover {
+    white-space: normal;
+    overflow: visible; 
+    text-overflow: unset; 
+  }
